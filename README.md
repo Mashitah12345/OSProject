@@ -65,11 +65,11 @@ Team Mates:
 
 1. Look at the TERMINAL tab. Explore and run commands according to the questions below. 
 2. You can include your answers as images, or cut and paste the output here. If you are cutting and pasting your answers, wrap your answers in the codeblock clause in markdown. For example, if i run the command *whoami* the the output would look like the one below.
-bash
+```bash
 @joeynor ➜ /workspaces/OSProject (main) $ whoami 
 codespace
 
-
+```
 
 
 **Questions:**
@@ -339,20 +339,20 @@ docker pull debian
 docker run --detach -it debian
 
 2. This will run the debian container. To check if the debian container is running, type
-bash
+```bash
 @joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
 CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
 f65be1987f84   debian    "bash"    4 minutes ago   Up 4 minutes             romantic_jackson
-
+```
 
 3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
-bash
+```bash
 docker exec -i -t romantic_jackson /bin/bash
-
+```
 
 4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
 
-bash
+```bash
 root@f65be1987f84:~# apt-get update      
 
 root@f65be1987f84:~# apt-get install nano
@@ -360,12 +360,12 @@ root@f65be1987f84:~# apt-get install nano
 root@f65be1987f84:~# cd /root
 
 root@f65be1987f84:~# nano helloworld.txt
-
+```
 
 5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing *exit*.
 
 6. Stop the container and run *docker ps -a*, and restart the container again. Is your file in the container still available?
-bash 
+```bash 
 @joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
@@ -373,11 +373,11 @@ CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                      
 f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago             romantic_jackson
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
-
+```
 
 7. Stop the container and delete the container. What happened to your helloworld.txt?
 
-bash 
+```bash 
 @joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
@@ -385,7 +385,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                      
 f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago             romantic_jackson
 
 @joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
-
+```
 
 **Questions:**
 
@@ -398,25 +398,24 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 At the terminal, create a new directory called *myroot*, and run a instance of debian linux and mount myroot to the container. Find out the exact path of my root, and mount it as the root folder in the debian container. 
 2. Create a file in /root on the container, the files should also appear in myroot of your host VM.
 
-bash 
+```bash 
 @joeynor ➜ /workspaces/OSProject (main) $ mkdir myroot
 @joeynor ➜ /workspaces/OSProject (main) $ cd myroot/
 @joeynor ➜ /workspaces/OSProject/myroot (main) $ pwd
 /workspaces/OSProject/myroot
 
 @joeynor ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v /workspaces/OSProject/myroot:/root debian
-
+```
 
 **Questions:**
 
 1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . *(2 mark)*
-```
+```bash
 @zataamaniam ➜ /workspaces/FnF-NatSysProject/myroot (main) $ ls -l HiZataAmani.txt
    -rw-rw-rw- 1 codespace codespace 56 Dec 31 17:32 HiZataAmani.txt
 ```
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. *(2 mark)*
-```
-bash
+```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
 
@@ -469,7 +468,7 @@ __Owner & Group-> 1000 1000__ <br>
 
 2. What port is the apache web server running. ***(1 mark)*** 
 ```bash 
-$ docker ps
+@Mashitah12345 ➜ /workspaces/OSProject/webpage (main) $ docker ps
 CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                     NAMES
 58c6c753310a   httpd     "httpd-foreground"   9 minutes ago    Up 9 minutes    0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   gallant_jepsen
 ```
