@@ -57,9 +57,9 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Fill answer here__.
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Ubuntu__.
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __4-core CPU, 8GB RAM, 32GB storage or 8-core CPU, 16GB RAM, 64GB storage__.
+3. Why must we commit and sync our current work on source control? ***(1 mark)*** __To save our work__.
 
 ## Exploring the Terminal
 
@@ -386,7 +386,7 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** __The output: Server Error. Because __.
 2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
 
 
