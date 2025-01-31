@@ -465,7 +465,7 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 drwxrwxrwx+ 2 1000 1000 4096 Jan 31 15:50 /usr/local/apache2/htdocs/
 ```
 __Permission-> drwxrwxrwx+__
-__Owner & Group-> 1000 1000__
+__Owner & Group-> 1000 1000__ <br>
 
 2. What port is the apache web server running. ***(1 mark)*** 
 ```bash 
@@ -473,10 +473,10 @@ $ docker ps
 CONTAINER ID   IMAGE     COMMAND              CREATED          STATUS          PORTS                                     NAMES
 58c6c753310a   httpd     "httpd-foreground"   9 minutes ago    Up 9 minutes    0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   gallant_jepsen
 ```
-__The Apache web server is running on port 80 inside the container__
+__The Apache web server is running on port 80 inside the container__ <br>
 
 3. What port is open for http protocol on the host machine? ***(1 mark)*** 
-__Port 8080 is open for HTTP traffic on the host machine (mapped from container port 80)__
+__Port 8080 is open for HTTP traffic on the host machine (mapped from container port 80)__ <br>
 
 ## Create SUB Networks
 
@@ -496,8 +496,8 @@ docker run -itd --net rednet --name c2 busybox sh
 ***Questions:***
 
 1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** 
-__BusyBox is a lightweight Linux distribution that provides essential Unix utilities in a single executable.__
-__The --name switch assigns a custom name to the container instead of a random one.__
+__BusyBox is a lightweight Linux distribution that provides essential Unix utilities in a single executable.__ <br>
+__The --name switch assigns a custom name to the container instead of a random one.__ <br>
 
 2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)***
 ```bash
@@ -518,8 +518,8 @@ ct rednet | grep Gateway
 @Mashitah12345 ➜ /workspaces/OSProject/webpage (main) $ docker inspect rednet | grep Gateway
                     "Gateway": "172.19.0.1"
 ```
-__Gateway for bluenet: 172.18.0.1__
-__Gateway for rednet: 172.19.0.1__
+__Gateway for bluenet: 172.18.0.1__ <br>
+__Gateway for rednet: 172.19.0.1__ <br>
 4. What is the network address for the running container c1 and c2? ***(1 mark)***
 ```bash
 @Mashitah12345 ➜ /workspaces/OSProject/webpage (main) $ docker inspect c1 | grep "IPAddress"
@@ -532,8 +532,8 @@ t c2 | grep "IPAddress"
             "IPAddress": "",
                     "IPAddress": "172.19.0.2",
 ```
-__c1 network address: 172.18.0.2__
-__c2 network address: 172.19.0.2__
+__c1 network address: 172.18.0.2__ <br>
+__c2 network address: 172.19.0.2__ <br>
 5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)***
 __No, I cannot able to ping the container c1 to c2,Here is the output:__
  ```bash
@@ -570,8 +570,8 @@ PING c2 (172.20.0.3): 56 data bytes
 64 bytes from 172.20.0.3: seq=10 ttl=64 time=0.107 ms
 ```
 2. What is different from the previous ping in the section above? ***(1 mark)*** 
-__Before bridging, c1 and c2 were isolated in separate networks and could not communicate.__
-__After bridging, they can now communicate because they share a common network.__
+__Before bridging, c1 and c2 were isolated in separate networks and could not communicate.__ <br>
+__After bridging, they can now communicate because they share a common network.__ <br>
 
 ## Intermediate Level (10 marks bonus)
 
