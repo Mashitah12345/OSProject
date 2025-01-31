@@ -386,8 +386,8 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __The output: Server Error. Because __.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** __The output: Server Error. Because the port 3000 is already in use.__.
+2. Show the instruction needed to make this work. ***(1 mark)*** __Type "docker ps" to see available port(LISTENING). Open "nano index.js" and change the port value to available value__.
 
 
 
